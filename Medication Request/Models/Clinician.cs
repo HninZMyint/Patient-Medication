@@ -1,19 +1,16 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Medication_Request.Models
 {
-    [Table("Patient")]
-    public class Patient
+    [Table("Clinician")]
+    public class Clinician
     {
-        public enum PatientSex { male, female };
+        public string RegistrationId { get; set; }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
-
-        public DateOnly DateOfBirth { get; set; }
-
-        public PatientSex Sex { get; set; }
     }
 }
