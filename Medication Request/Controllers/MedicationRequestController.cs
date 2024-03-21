@@ -27,7 +27,8 @@ namespace Medication_Request.Controllers
         [Route("/medicationRequest")]
         public async Task<HttpResponseMessage> PostMedicationRequest(MedicationRequest medicationRequest)
         {
-            if(medicationRequest == null || string.IsNullOrEmpty(medicationRequest.PatientReference))
+            if((medicationRequest == null) || 
+                (string.IsNullOrEmpty(medicationRequest.PatientReference?.Replace(" ", string.Empty))))
             {
                 _logger.LogError("Medication request is not defined.");
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);

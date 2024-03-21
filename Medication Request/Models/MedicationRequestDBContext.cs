@@ -4,10 +4,10 @@ namespace Medication_Request.Models
 {
     public class MedicationRequestDBContext : DbContext
     {
-        public DbSet<Patient> Patient { get; set; }
-        public DbSet<Medication> Medication { get; set; }
-        public DbSet<Clinician> Clinician { get; set; }
-        public DbSet<MedicationRequest> MedicationRequest { get; set; }
+        public virtual DbSet<Patient> Patient { get; set; }
+        public virtual DbSet<Medication> Medication { get; set; }
+        public virtual DbSet<Clinician> Clinician { get; set; }
+        public virtual DbSet<MedicationRequest> MedicationRequest { get; set; }
 
         public MedicationRequestDBContext(DbContextOptions options) : base(options) { }
 
